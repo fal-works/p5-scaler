@@ -1,7 +1,7 @@
 import p5 from "p5";
 import { p } from "./shared";
 import { createCanvasSizeWatcher, resizeCanvas } from "./canvas";
-import { onCompleteAssignP5 } from "./initialization-callbacks";
+import { init } from "./sketch";
 
 /**
  * Enables auto-resize so that the canvas is resized automatically
@@ -13,7 +13,7 @@ export const autoResizeCanvas = (
 ): void => {
   const watch = createCanvasSizeWatcher();
 
-  const apply = (p: p5) => {
+  const apply = (p: p5): void => {
     const drawMain = p.draw || (() => {});
     p.draw = () => {
       const newCanvasSize = watch();
@@ -24,5 +24,5 @@ export const autoResizeCanvas = (
   };
 
   if (p) apply(p);
-  else onCompleteAssignP5.push(apply);
+  else init.onCompleteAssignP5.push(apply);
 };

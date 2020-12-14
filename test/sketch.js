@@ -1,14 +1,10 @@
 //eslint-disable-next-line
 const p5s = p5starter;
 
-let p;
-p5s.onStartAssignP5.push((p5Inst) => {
+let p, canvas;
+p5s.init.onStartSetup.push((p5Inst, canvasInst) => {
   p = p5Inst;
-});
-
-let canvas;
-p5s.onStartSetup.push(() => {
-  canvas = p5s.canvas;
+  canvas = canvasInst;
 });
 
 const { drawOnCanvas } = p5s;
