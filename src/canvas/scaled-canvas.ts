@@ -15,7 +15,7 @@ export interface ScaledCanvas {
   size: ScaledCanvasSize;
 }
 
-/** Used in `createScaledCanvas()` and `createFullScaledCanvas()`. */
+/** Calls `p.createCanvas()` with the required size. */
 export const constructCanvas = (
   renderer: "p2d" | "webgl" = "p2d"
 ): ScaledCanvas => {
