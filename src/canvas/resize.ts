@@ -1,5 +1,5 @@
 import { p, canvas } from "../shared";
-import { ScaledCanvasSize, calcCanvasSize } from "./scaled-canvas-size";
+import { ScaledCanvasSize, getRequiredCanvasSize } from "./scaled-canvas-size";
 
 /** @returns `true` if `a` equals `b`. */
 const compareScaledCanvasSize = (
@@ -19,10 +19,10 @@ const compareScaledCanvasSize = (
  * The function returns a new size only if the required size has been changed.
  */
 export const createCanvasSizeWatcher = () => {
-  let previousSize = calcCanvasSize();
+  let previousSize = getRequiredCanvasSize();
 
   return () => {
-    const newSize = calcCanvasSize();
+    const newSize = getRequiredCanvasSize();
     if (compareScaledCanvasSize(previousSize, newSize)) return undefined;
 
     previousSize = newSize;

@@ -1,7 +1,7 @@
 import p5 from "p5";
 import { p } from "../shared";
 
-import { ScaledCanvasSize, calcCanvasSize } from "./scaled-canvas-size";
+import { ScaledCanvasSize, getRequiredCanvasSize } from "./scaled-canvas-size";
 
 /**
  * p5.js canvas accompanied by a scale factor.
@@ -18,7 +18,7 @@ export interface ScaledCanvas {
 export const constructCanvas = (
   renderer: "p2d" | "webgl" = "p2d"
 ): ScaledCanvas => {
-  const size = calcCanvasSize();
+  const size = getRequiredCanvasSize();
   const { width, height } = size.physical;
   const p5Canvas = p.createCanvas(width, height, renderer);
 

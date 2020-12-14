@@ -20,7 +20,7 @@ export interface ScaledCanvasSize {
 }
 
 /** Function that returns the currently required canvas size. */
-export let calcCanvasSize: () => ScaledCanvasSize;
+export let getRequiredCanvasSize: () => ScaledCanvasSize;
 
 /** Creates a `ScaledCanvasSize` instance. */
 const createScaledCanvasSize = (
@@ -43,7 +43,8 @@ export const prepareCalcCanvasSizeFixedRatio = (
   const getScaleFactor = () =>
     calcFittingScaleFactor(logicalSize, getRootElementSize());
 
-  calcCanvasSize = () => createScaledCanvasSize(logicalSize, getScaleFactor());
+  getRequiredCanvasSize = () =>
+    createScaledCanvasSize(logicalSize, getScaleFactor());
 };
 
 /** Prepares to calculate canvas size with variable aspect ratio. */
@@ -57,13 +58,13 @@ export const prepareCalcCanvasSizeVariableRatio = (
     height: logicalHeight,
   });
 
-  calcCanvasSize = () =>
+  getRequiredCanvasSize = () =>
     createScaledCanvasSize(getLogicalSize(), getScaleFactor());
 };
 
 /** Prepares to get a fixed canvas size without scaling. */
 export const prepareGetFixedCanvasSize = (size: RectangleSize): void => {
-  calcCanvasSize = () => ({
+  getRequiredCanvasSize = () => ({
     logical: size,
     physical: size,
     scaleFactor: 1.0,
