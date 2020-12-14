@@ -1,8 +1,7 @@
 import p5 from "p5";
 import { p } from "../shared";
 
-import { ScaledCanvasSize } from "./scaled-canvas-size";
-import { calcCanvasSize } from "./common";
+import { ScaledCanvasSize, calcCanvasSize } from "./scaled-canvas-size";
 
 /**
  * p5.js canvas accompanied by a scale factor.

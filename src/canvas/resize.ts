@@ -1,6 +1,5 @@
 import { p, canvas } from "../shared";
-import { ScaledCanvasSize } from "./scaled-canvas-size";
-import { calcCanvasSize } from "./common";
+import { ScaledCanvasSize, calcCanvasSize } from "./scaled-canvas-size";
 
 /** @returns `true` if `a` equals `b`. */
 const compareScaledCanvasSize = (

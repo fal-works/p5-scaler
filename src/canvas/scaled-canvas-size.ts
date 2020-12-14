@@ -19,6 +19,9 @@ export interface ScaledCanvasSize {
   readonly scaleFactor: number;
 }
 
+/** Function that returns the currently required canvas size. */
+export let calcCanvasSize: () => ScaledCanvasSize;
+
 /** Creates a `ScaledCanvasSize` instance. */
 const createScaledCanvasSize = (
   logicalSize: RectangleSize,
@@ -32,21 +35,21 @@ const createScaledCanvasSize = (
   },
 });
 
-/** @returns Function that calculates canvas size with fixed aspect ratio. */
-export const createCalcCanvasSizeFixedRatio = (
+/** Prepares to calculate canvas size with fixed aspect ratio. */
+export const prepareCalcCanvasSizeFixedRatio = (
   logicalSize: RectangleSize
-): (() => ScaledCanvasSize) => {
+): void => {
   const getRootElementSize = createGetRootElementSize();
   const getScaleFactor = () =>
     calcFittingScaleFactor(logicalSize, getRootElementSize());
 
-  return () => createScaledCanvasSize(logicalSize, getScaleFactor());
+  calcCanvasSize = () => createScaledCanvasSize(logicalSize, getScaleFactor());
 };
 
-/** @returns Function that calculates canvas size with variable aspect ratio. */
-export const createCalcCanvasSizeVariableRatio = (
+/** Prepares to calculate canvas size with variable aspect ratio. */
+export const prepareCalcCanvasSizeVariableRatio = (
   logicalHeight: number
-): (() => ScaledCanvasSize) => {
+): void => {
   const getRootElementSize = createGetRootElementSize();
   const getScaleFactor = () => getRootElementSize().height / logicalHeight;
   const getLogicalSize = (): RectangleSize => ({
@@ -54,14 +57,13 @@ export const createCalcCanvasSizeVariableRatio = (
     height: logicalHeight,
   });
 
-  return () => createScaledCanvasSize(getLogicalSize(), getScaleFactor());
+  calcCanvasSize = () =>
+    createScaledCanvasSize(getLogicalSize(), getScaleFactor());
 };
 
-/** @returns Function that returns a fixed canvas size without scaling. */
-export const createGetFixedCanvasSize = (
-  size: RectangleSize
-): (() => ScaledCanvasSize) => {
-  return () => ({
+/** Prepares to get a fixed canvas size without scaling. */
+export const prepareGetFixedCanvasSize = (size: RectangleSize): void => {
+  calcCanvasSize = () => ({
     logical: size,
     physical: size,
     scaleFactor: 1.0,

@@ -11,12 +11,11 @@ import {
 } from "./initialization-callbacks";
 
 import {
-  setCalcCanvasSize,
-  createCalcCanvasSizeFixedRatio,
-  createCalcCanvasSizeVariableRatio,
+  prepareCalcCanvasSizeFixedRatio,
+  prepareCalcCanvasSizeVariableRatio,
+  prepareGetFixedCanvasSize,
   constructCanvas,
 } from "./canvas";
-import { createGetFixedCanvasSize } from "./canvas/scaled-canvas-size";
 
 export type RendererType = P2D | WEBGL;
 
@@ -63,8 +62,7 @@ export const fixedRatio = (params: {
   readonly width: number;
   readonly height: number;
 }): Starter => {
-  setCalcCanvasSize(createCalcCanvasSizeFixedRatio(params));
-
+  prepareCalcCanvasSizeFixedRatio(params);
   return { start: newP5 };
 };
 
@@ -81,7 +79,7 @@ export const variableRatio = (params: {
   readonly height: number;
   readonly displayBlock?: boolean;
 }): Starter => {
-  setCalcCanvasSize(createCalcCanvasSizeVariableRatio(params.height));
+  prepareCalcCanvasSizeVariableRatio(params.height);
   if (params.displayBlock !== false)
     onStartSetup.unshift(() => canvas.p5Canvas.style("display", "block"));
 
@@ -96,6 +94,6 @@ export const fixedSize = (params: {
   readonly width: number;
   readonly height: number;
 }): Starter => {
-  setCalcCanvasSize(createGetFixedCanvasSize(params));
+  prepareGetFixedCanvasSize(params);
   return { start: newP5 };
 };
