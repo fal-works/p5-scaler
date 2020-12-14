@@ -16,18 +16,15 @@ export const setCanvas = (instance: ScaledCanvas): void => {
 };
 
 /** The HTMLElement that contains the canvas. */
-export let rootElement: HTMLElement;
+export let rootElement: HTMLElement = document.body;
 
-/** Returns `document.body` if the given element is not found. */
-const validateHTMLElement = (
-  elementOrId: HTMLElement | string | undefined | null
-): HTMLElement => {
-  if (!elementOrId) return document.body;
-  if (typeof elementOrId === "string")
-    return document.getElementById(elementOrId) || document.body;
-  return elementOrId;
+/** Sets `element` as the root so that it will contain the canvas. */
+export const setRootElement = (element: HTMLElement): void => {
+  rootElement = element;
 };
 
-export const setRootElement = (elementOrID?: HTMLElement | string): void => {
-  rootElement = validateHTMLElement(elementOrID);
+/** Sets the element of `id` as the root so that it will contain the canvas. */
+export const setRootElementID = (id: string): void => {
+  const element = document.getElementById(id);
+  if (element) rootElement = element;
 };

@@ -9,7 +9,14 @@ export {
   onCompleteSetup,
 } from "./initialization-callbacks";
 
-export { p, canvas, rootElement } from "./shared";
+export {
+  p,
+  canvas,
+  rootElement,
+  setRootElement,
+  setRootElementID,
+} from "./shared";
+
 export { drawOnCanvas } from "./draw";
 
 export { autoResizeCanvas } from "./config";

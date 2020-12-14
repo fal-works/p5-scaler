@@ -1,13 +1,7 @@
 import p5, { P2D, WEBGL } from "p5";
 import { P5Methods } from "./p5methods";
 
-import {
-  setP5Instance,
-  canvas,
-  setCanvas,
-  rootElement,
-  setRootElement,
-} from "./shared";
+import { setP5Instance, canvas, setCanvas, rootElement } from "./shared";
 import {
   onStartAssignP5,
   onCompleteAssignP5,
@@ -64,15 +58,12 @@ interface Starter {
  *
  * @param params.width The logical width of the canvas.
  * @param params.height The logical height of the canvas.
- * @param params.root An element or its ID that should contain the canvas.
  */
 export const fixedRatio = (params: {
   width: number;
   height: number;
-  root?: HTMLElement | string;
   disableCanvasScaling?: boolean;
 }): Starter => {
-  setRootElement(params.root);
   setCalcCanvasSize(
     createCalcCanvasSizeFixed(params, params.disableCanvasScaling)
   );
@@ -87,15 +78,12 @@ export const fixedRatio = (params: {
  * Call the returned `start()` function for starting the sketch.
  *
  * @param height The logical height of the canvas.
- * @param root An element or its ID that should contain the canvas.
  * @param displayBlock Sets "display: block" to the canvas (default: `true`).
  */
 export const variableRatio = (params: {
   height: number;
-  root?: HTMLElement | string;
   displayBlock?: boolean;
 }): Starter => {
-  setRootElement(params.root);
   setCalcCanvasSize(createCalcCanvasSizeVariable(params.height));
   if (params.displayBlock !== false)
     onStartSetup.unshift(() => canvas.p5Canvas.style("display", "block"));
