@@ -8,13 +8,12 @@ const version = "0.1.0";
 const moduleName = "p5starter";
 const umdName = "p5starter";
 const year = "2020";
-const description = `* A small utility library for creating p5.js sketches.`;
 
 const bannerComment = `/**
  * ${moduleName}
- *
-${description}
- * GitHub repository: {@link https://github.com/fal-works/${moduleName}}
+ * ──────────────────────────────────────────────────────────────────────────
+ * Utility library for creating p5.js sketches.
+ * GitHub repository: https://github.com/fal-works/${moduleName}
  *
  * @module ${moduleName}
  * @copyright ${year} FAL
