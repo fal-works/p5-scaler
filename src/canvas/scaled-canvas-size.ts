@@ -33,21 +33,18 @@ const createScaledCanvasSize = (
 });
 
 /** @returns Function that calculates canvas size with fixed aspect ratio. */
-export const createCalcCanvasSizeFixed = (
-  logicalSize: RectangleSize,
-  disableCanvasScaling?: boolean
+export const createCalcCanvasSizeFixedRatio = (
+  logicalSize: RectangleSize
 ): (() => ScaledCanvasSize) => {
   const getRootElementSize = createGetRootElementSize();
-  const getScaleFactor =
-    disableCanvasScaling === true
-      ? () => 1.0
-      : () => calcFittingScaleFactor(logicalSize, getRootElementSize());
+  const getScaleFactor = () =>
+    calcFittingScaleFactor(logicalSize, getRootElementSize());
 
   return () => createScaledCanvasSize(logicalSize, getScaleFactor());
 };
 
 /** @returns Function that calculates canvas size with variable aspect ratio. */
-export const createCalcCanvasSizeVariable = (
+export const createCalcCanvasSizeVariableRatio = (
   logicalHeight: number
 ): (() => ScaledCanvasSize) => {
   const getRootElementSize = createGetRootElementSize();
@@ -58,4 +55,15 @@ export const createCalcCanvasSizeVariable = (
   });
 
   return () => createScaledCanvasSize(getLogicalSize(), getScaleFactor());
+};
+
+/** @returns Function that returns a fixed canvas size without scaling. */
+export const createGetFixedCanvasSize = (
+  size: RectangleSize
+): (() => ScaledCanvasSize) => {
+  return () => ({
+    logical: size,
+    physical: size,
+    scaleFactor: 1.0,
+  });
 };

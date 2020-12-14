@@ -12,10 +12,11 @@ import {
 
 import {
   setCalcCanvasSize,
-  createCalcCanvasSizeFixed,
-  createCalcCanvasSizeVariable,
+  createCalcCanvasSizeFixedRatio,
+  createCalcCanvasSizeVariableRatio,
   constructCanvas,
 } from "./canvas";
+import { createGetFixedCanvasSize } from "./canvas/scaled-canvas-size";
 
 export type RendererType = P2D | WEBGL;
 
@@ -51,8 +52,7 @@ interface Starter {
 
 /**
  * Entry point of `p5starter`.
- * The canvas size will fit the root element keeping the aspect ratio
- * (unless the flag `disableCanvasScaling` is set).
+ * The canvas size will fit the root element keeping the aspect ratio.
  *
  * Call the returned `start()` function for starting the sketch.
  *
@@ -60,13 +60,10 @@ interface Starter {
  * @param params.height The logical height of the canvas.
  */
 export const fixedRatio = (params: {
-  width: number;
-  height: number;
-  disableCanvasScaling?: boolean;
+  readonly width: number;
+  readonly height: number;
 }): Starter => {
-  setCalcCanvasSize(
-    createCalcCanvasSizeFixed(params, params.disableCanvasScaling)
-  );
+  setCalcCanvasSize(createCalcCanvasSizeFixedRatio(params));
 
   return { start: newP5 };
 };
@@ -81,12 +78,24 @@ export const fixedRatio = (params: {
  * @param displayBlock Sets "display: block" to the canvas (default: `true`).
  */
 export const variableRatio = (params: {
-  height: number;
-  displayBlock?: boolean;
+  readonly height: number;
+  readonly displayBlock?: boolean;
 }): Starter => {
-  setCalcCanvasSize(createCalcCanvasSizeVariable(params.height));
+  setCalcCanvasSize(createCalcCanvasSizeVariableRatio(params.height));
   if (params.displayBlock !== false)
     onStartSetup.unshift(() => canvas.p5Canvas.style("display", "block"));
 
+  return { start: newP5 };
+};
+
+/**
+ * Entry point of `p5starter` with a fixed size without scaling.
+ * Call the returned `start()` function for starting the sketch.
+ */
+export const fixedSize = (params: {
+  readonly width: number;
+  readonly height: number;
+}): Starter => {
+  setCalcCanvasSize(createGetFixedCanvasSize(params));
   return { start: newP5 };
 };

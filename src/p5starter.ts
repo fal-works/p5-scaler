@@ -1,6 +1,6 @@
 export { P5Methods } from "./p5methods";
 export { ScaledCanvas } from "./canvas";
-export { RendererType, fixedRatio, variableRatio } from "./sketch";
+export { RendererType, fixedRatio, variableRatio, fixedSize } from "./sketch";
 
 export {
   onStartAssignP5,
