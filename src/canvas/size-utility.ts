@@ -6,19 +6,13 @@ export interface RectangleSize {
   readonly height: number;
 }
 
-/** @returns The inner width and height of `window`. */
-const getWindowSize = (): RectangleSize => ({
-  width: window.innerWidth,
-  height: window.innerHeight,
-});
-
 /**
  * Creates a function that returns the size of the root element.
- * If the root is `document.body`, the function returns the window size.
+ * If the root is `document.body`, that function returns the window size.
  */
 export const createGetRootElementSize = (): (() => RectangleSize) => {
   return rootElement === document.body
-    ? getWindowSize
+    ? () => ({ width: window.innerWidth, height: window.innerHeight })
     : () => rootElement.getBoundingClientRect();
 };
 
