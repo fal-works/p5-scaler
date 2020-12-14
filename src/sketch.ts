@@ -45,15 +45,15 @@ const newP5 = (p5Methods: P5Methods, renderer?: RendererType): void => {
   }, rootElement);
 };
 
-const starter = {
+interface Starter {
   /**
    * @param p5Methods Set of `p5` methods, e.g. `setup()`/`draw()`.
    *   Note that you should not call `p.createCanvas()` in `setup()` manually
    *   as it will be called automatically.
    * @param renderer Either "p2d" (default) or "webgl".
    */
-  start: newP5,
-};
+  start: typeof newP5;
+}
 
 /**
  * Entry point of `p5starter`.
@@ -71,13 +71,13 @@ export const fixedRatio = (params: {
   height: number;
   root?: HTMLElement | string;
   disableCanvasScaling?: boolean;
-}): typeof starter => {
+}): Starter => {
   setRootElement(params.root);
   setCalcCanvasSize(
     createCalcCanvasSizeFixed(params, params.disableCanvasScaling)
   );
 
-  return starter;
+  return { start: newP5 };
 };
 
 /**
@@ -94,11 +94,11 @@ export const variableRatio = (params: {
   height: number;
   root?: HTMLElement | string;
   displayBlock?: boolean;
-}): typeof starter => {
+}): Starter => {
   setRootElement(params.root);
   setCalcCanvasSize(createCalcCanvasSizeVariable(params.height));
   if (params.displayBlock !== false)
     onStartSetup.unshift(() => canvas.p5Canvas.style("display", "block"));
 
-  return starter;
+  return { start: newP5 };
 };
