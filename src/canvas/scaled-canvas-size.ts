@@ -19,6 +19,7 @@ export interface ScaledCanvasSize {
   readonly scaleFactor: number;
 }
 
+/** Creates a `ScaledCanvasSize` instance. */
 const createScaledCanvasSize = (
   logicalSize: RectangleSize,
   scaleFactor: number
@@ -31,6 +32,7 @@ const createScaledCanvasSize = (
   },
 });
 
+/** @returns Function that calculates canvas size with fixed aspect ratio. */
 export const createCalcCanvasSizeFixed = (
   logicalSize: RectangleSize,
   disableCanvasScaling?: boolean
@@ -44,6 +46,7 @@ export const createCalcCanvasSizeFixed = (
   return () => createScaledCanvasSize(logicalSize, getScaleFactor());
 };
 
+/** @returns Function that calculates canvas size with variable aspect ratio. */
 export const createCalcCanvasSizeVariable = (
   logicalHeight: number
 ): (() => ScaledCanvasSize) => {
