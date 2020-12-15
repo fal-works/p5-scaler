@@ -13,7 +13,7 @@ const bannerComment = `/**
  * ${moduleName}
  * ──────────────────────────────────────────────────────────────────────────
  * Utility library for creating p5.js sketches.
- * GitHub repository: https://github.com/fal-works/${moduleName}
+ * https://fal-works.github.io/${moduleName}/
  *
  * @module ${moduleName}
  * @copyright ${year} FAL
@@ -29,7 +29,7 @@ const distributionDirectory = "lib";
 
 export { distributionDirectory, moduleName, umdName, bannerComment };
 
-export const input = `out/p5starter.js`;
+export const input = `out/${moduleName}.js`;
 export const external = ["p5"];
 
 export const createPlugins = () => [
