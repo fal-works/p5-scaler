@@ -93,7 +93,36 @@
 			<a href="#p5starter" id="p5starter" style="color: inherit; text-decoration: none;">
 				<h1>p5starter</h1>
 			</a>
-			<p>A small utility library for creating p5.js sketches.</p>
+			<p>A small utility library for creating p5.js sketches with auto-scaling.</p>
+			<ul>
+				<li>Resizes/scales the canvas automatically depending on the parent HTML element.  </li>
+				<li>The aspect ratio can be either fixed or variable.</li>
+				<li>Also enables to insert initialization code (via <code>p5starter.init</code>) so you don&#39;t have to write everything in <code>setup()</code>.</li>
+				<li>Works on <a href="https://github.com/processing/p5.js/wiki/Global-and-instance-mode">p5.js instance mode</a>. TypeScript/ES6 friendly.</li>
+			</ul>
+			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+				<h2>Usage</h2>
+			</a>
+			<a href="#with-ltscriptgt-tag" id="with-ltscriptgt-tag" style="color: inherit; text-decoration: none;">
+				<h3>With <code>&lt;script&gt;</code> tag</h3>
+			</a>
+			<p>After loading <code>p5.js</code>, load <code>p5starter.js</code> (or <code>p5starter.min.js</code>) via <code>&lt;script&gt;</code> tag<br>(The order is important as <code>p5starter.js</code> depends on <code>p5.js</code>).</p>
+			<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js&quot;</span><span style="color: #000000FF"> </span><span style="color: #FF0000">defer</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@fal-works/p5starter@0.1.0/lib/p5starter.min.js&quot;</span><span style="color: #000000FF"> </span><span style="color: #FF0000">defer</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+</code></pre>
+			<p>This will define a global variable <code>p5starter</code> so that you can use it in your sketch.</p>
+			<p><strong>For a tutorial sample code, see: <a href="https://editor.p5js.org/FAL/sketches/uKrr1SGZF">https://editor.p5js.org/FAL/sketches/uKrr1SGZF</a></strong></p>
+			<a href="#on-typescript--es6" id="on-typescript--es6" style="color: inherit; text-decoration: none;">
+				<h3>On TypeScript / ES6</h3>
+			</a>
+			<p>Install via NPM:</p>
+			<pre><code class="language-text">npm install @fal-works/p5starter</code></pre>
+			<p>And then something like:</p>
+			<pre><code class="language-js"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">p5s</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;@fal-works/p5starter&quot;</span><span style="color: #000000">;</span>
+</code></pre>
+			<p>Unlike using <code>&lt;script&gt;</code> tag, you may also directly import some common instances like the below, however note that they are available only after the setup process has been started.</p>
+			<pre><code class="language-js"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">p</span><span style="color: #000000">, </span><span style="color: #001080">canvas</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;@fal-works/p5starter&quot;</span><span style="color: #000000">;</span>
+</code></pre>
 		</div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
@@ -144,7 +173,7 @@
 				<div class="tsd-signature tsd-kind-icon">Renderer<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">P2D</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">WEBGL</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/sketch.ts#L19">sketch.ts:19</a></li>
+						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/sketch.ts#L19">sketch.ts:19</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -157,7 +186,7 @@
 				<div class="tsd-signature tsd-kind-icon">canvas<span class="tsd-signature-symbol">:</span> <a href="interfaces/scaledcanvas.html" class="tsd-signature-type">ScaledCanvas</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/shared.ts#L10">shared.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/shared.ts#L10">shared.ts:10</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -172,7 +201,7 @@
 				<div class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Initializer</span><span class="tsd-signature-symbol"> = {onCompleteAssignP5: [],onStartSetup: [],}</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/sketch.ts#L14">sketch.ts:14</a></li>
+						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/sketch.ts#L14">sketch.ts:14</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -187,7 +216,7 @@
 				<div class="tsd-signature tsd-kind-icon">p<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">p5</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/shared.ts#L5">shared.ts:5</a></li>
+						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/shared.ts#L5">shared.ts:5</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -202,7 +231,7 @@
 				<div class="tsd-signature tsd-kind-icon">root<wbr>Element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> = document.body</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/shared.ts#L16">shared.ts:16</a></li>
+						<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/shared.ts#L16">shared.ts:16</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -224,7 +253,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/config.ts#L10">config.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/config.ts#L9">config.ts:9</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -268,7 +297,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/draw.ts#L4">draw.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/draw.ts#L4">draw.ts:4</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -308,7 +337,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/entry.ts#L28">entry.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/entry.ts#L28">entry.ts:28</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -352,7 +381,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/entry.ts#L60">entry.ts:60</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/entry.ts#L60">entry.ts:60</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -389,7 +418,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/shared.ts#L19">shared.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/shared.ts#L19">shared.ts:19</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -417,7 +446,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/shared.ts#L23">shared.ts:23</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/shared.ts#L23">shared.ts:23</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -445,7 +474,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/c89f851/src/entry.ts#L45">entry.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5starter/blob/5f75ac8/src/entry.ts#L45">entry.ts:45</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
