@@ -15,10 +15,10 @@ export const setCanvas = (instance: ScaledCanvas): ScaledCanvas =>
 /** The HTML element that contains the canvas (default: `document.body`). */
 export let rootElement: HTMLElement = document.body;
 
-/** Sets `element` as the root so that it contains the canvas. */
+/** Sets `element` as the root (= canvas container). */
 export const setRootElement = (element: HTMLElement): HTMLElement =>
   (rootElement = element);
 
-/** Sets the element of `id` as the root so that it contains the canvas. */
+/** Sets the element of `id` as the root (= canvas container). */
 export const setRootElementID = (id: string): HTMLElement =>
   (rootElement = document.getElementById(id) || document.body);
