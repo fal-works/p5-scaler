@@ -13,7 +13,7 @@ const setup = () => {
   });
 };
 
-p5s.autoResizeCanvas(setup);
+p5s.config.autoResizeCanvas(setup);
 
 // p5s.fixedRatio({ width: 200, height: 200 }).start({ setup });
 p5s.variableRatio({ height: 200 }).start({ setup });

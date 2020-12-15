@@ -1,6 +1,6 @@
 import p5 from "p5";
-import { createCanvasSizeWatcher, resizeCanvas } from "./canvas";
-import { init } from "./sketch";
+import { createCanvasSizeWatcher, resizeCanvas } from "../canvas";
+import { init } from "../sketch";
 
 /**
  * Enables auto-resize so that the canvas is resized automatically
@@ -23,3 +23,5 @@ export const autoResizeCanvas = (
 
   init.onCompleteAssignP5.push(apply);
 };
+
+export { setRootElement, setRootElementID } from "../shared";
