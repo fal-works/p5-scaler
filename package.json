@@ -1,6 +1,6 @@
 {
   "name": "@fal-works/p5-scaler",
-  "description": "A small utility library for creating p5.js sketches with auto-scaling.",
+  "description": "A small utility library for creating p5.js sketches with scaling feature.",
   "version": "0.1.0",
   "author": "FAL",
   "bugs": {
