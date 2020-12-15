@@ -59,7 +59,7 @@
     },
     {
       "files": [
-        "test/**/*.js"
+        "sample/**/*.js"
       ],
       "globals": {
         "p5s": "readonly"
