@@ -1,6 +1,6 @@
 {
   "name": "@fal-works/p5starter",
-  "description": "A small utility library for creating p5.js sketches.",
+  "description": "A small utility library for creating p5.js sketches with auto-scaling.",
   "version": "0.1.0",
   "author": "FAL",
   "bugs": {
