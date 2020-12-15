@@ -17,7 +17,7 @@ interface Starter {
 }
 
 /**
- * Entry point of `p5starter`.
+ * Entry point of `p5-scaler`.
  * The canvas size will fit the root element keeping the aspect ratio.
  *
  * Call the returned `start()` function for starting the sketch.
@@ -34,7 +34,7 @@ export const fixedRatio = (params: {
 };
 
 /**
- * Entry point of `p5starter` with a variable aspect ratio.
+ * Entry point of `p5-scaler` with a variable aspect ratio.
  * The canvas size will fit the root element in both width and height.
  *
  * Call the returned `start()` function for starting the sketch.
@@ -54,7 +54,7 @@ export const variableRatio = (params: {
 };
 
 /**
- * Entry point of `p5starter` with a fixed size without scaling.
+ * Entry point of `p5-scaler` with a fixed size without scaling.
  * Call the returned `start()` function for starting the sketch.
  */
 export const fixedSize = (params: {

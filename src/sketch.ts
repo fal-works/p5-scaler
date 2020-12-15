@@ -1,5 +1,5 @@
 import p5, { P2D, WEBGL } from "p5";
-import { P5Methods } from "./p5methods";
+import { P5Methods } from "./p5-methods";
 import { setP5Instance, setCanvas, rootElement } from "./shared";
 import { ScaledCanvas, constructCanvas } from "./canvas";
 

@@ -56,6 +56,14 @@
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-empty-function": "off"
       }
+    },
+    {
+      "files": [
+        "test/**/*.js"
+      ],
+      "globals": {
+        "p5s": "readonly"
+      }
     }
   ]
 }

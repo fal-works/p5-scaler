@@ -22,7 +22,7 @@
     "typedocOptions": {
         "out": "docs",
         "entryPoints": [
-            "./src/p5starter.ts"
+            "./src/index.ts"
         ],
         "excludeExternals": true,
         "excludeNotExported": true,

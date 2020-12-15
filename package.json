@@ -1,10 +1,10 @@
 {
-  "name": "@fal-works/p5starter",
+  "name": "@fal-works/p5-scaler",
   "description": "A small utility library for creating p5.js sketches with auto-scaling.",
   "version": "0.1.0",
   "author": "FAL",
   "bugs": {
-    "url": "https://github.com/fal-works/p5starter/issues"
+    "url": "https://github.com/fal-works/p5-scaler/issues"
   },
   "dependencies": {
     "p5": "^1.1.9"
@@ -37,31 +37,31 @@
     "lib",
     "types"
   ],
-  "homepage": "https://github.com/fal-works/p5starter#readme",
-  "jsnext:main": "lib/p5starter.mjs",
+  "homepage": "https://github.com/fal-works/p5-scaler#readme",
+  "jsnext:main": "lib/p5-scaler.mjs",
   "keywords": [],
   "license": "MIT",
-  "main": "lib/p5starter.js",
-  "module": "lib/p5starter.mjs",
+  "main": "lib/p5-scaler.js",
+  "module": "lib/p5-scaler.mjs",
   "optionalDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fal-works/p5starter.git"
+    "url": "git+https://github.com/fal-works/p5-scaler.git"
   },
   "scripts": {
     "build": "run-s build-tsc build-es build-umd doc",
     "build-es": "run-s build-es:rollup build-es:format build-es:minify",
-    "build-es:format": "eslint --fix ./lib/p5starter.mjs",
-    "build-es:minify": "terser ./lib/p5starter.mjs -c -m -o ./lib/p5starter.min.mjs --comments --ecma 6",
+    "build-es:format": "eslint --fix ./lib/p5-scaler.mjs",
+    "build-es:minify": "terser ./lib/p5-scaler.mjs -c -m -o ./lib/p5-scaler.min.mjs --comments --ecma 6",
     "build-es:rollup": "rollup -c ./rollup-config-es.js",
     "build-tsc": "tsc",
     "build-umd": "run-s build-umd:rollup build-umd:format build-umd:minify",
-    "build-umd:format": "eslint --fix ./lib/p5starter.js",
-    "build-umd:minify": "terser ./lib/p5starter.js -c -m -o ./lib/p5starter.min.js --comments --ecma 6",
+    "build-umd:format": "eslint --fix ./lib/p5-scaler.js",
+    "build-umd:minify": "terser ./lib/p5-scaler.js -c -m -o ./lib/p5-scaler.min.js --comments --ecma 6",
     "build-umd:rollup": "rollup -c ./rollup-config-umd.js",
     "doc": "typedoc",
     "lint": "eslint --fix ./src/**/*.ts",
     "lint-js": "eslint --fix ./*.js"
   },
-  "types": "types/p5starter.d.ts"
+  "types": "types/p5-scaler.d.ts"
 }

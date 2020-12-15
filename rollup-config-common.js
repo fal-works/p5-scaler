@@ -5,14 +5,14 @@ import cleanup from "rollup-plugin-cleanup";
 
 const version = "0.1.0";
 
-const moduleName = "p5starter";
-const umdName = "p5starter";
+const moduleName = "p5-scaler";
+const umdName = "p5s";
 const year = "2020";
 
 const bannerComment = `/**
  * ${moduleName}
  * ──────────────────────────────────────────────────────────────────────────
- * Utility library for creating p5.js sketches.
+ * Utility library for scaling p5.js sketches.
  * https://fal-works.github.io/${moduleName}/
  *
  * @module ${moduleName}
@@ -29,7 +29,7 @@ const distributionDirectory = "lib";
 
 export { distributionDirectory, moduleName, umdName, bannerComment };
 
-export const input = `out/${moduleName}.js`;
+export const input = `out/index.js`;
 export const external = ["p5"];
 
 export const createPlugins = () => [

@@ -1,6 +1,6 @@
 export * from "./entry";
 
-export { P5Methods } from "./p5methods";
+export { P5Methods } from "./p5-methods";
 export { ScaledCanvas } from "./canvas";
 export { RendererType, init } from "./sketch";
 export {
