@@ -6,6 +6,9 @@
   "bugs": {
     "url": "https://github.com/fal-works/p5starter/issues"
   },
+  "dependencies": {
+    "p5": "^1.1.9"
+  },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@types/p5": "^0.9.1",
@@ -15,7 +18,6 @@
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-prettier": "^3.3.0",
     "npm-run-all": "^4.1.5",
-    "p5": "^1.1.9",
     "prettier": "^2.2.1",
     "rollup": "^2.35.0",
     "rollup-plugin-cleanup": "^3.2.1",
@@ -57,9 +59,9 @@
     "build-umd:format": "eslint --fix ./lib/p5starter.js",
     "build-umd:minify": "terser ./lib/p5starter.js -c -m -o ./lib/p5starter.min.js --comments --ecma 6",
     "build-umd:rollup": "rollup -c ./rollup-config-umd.js",
+    "doc": "typedoc",
     "lint": "eslint --fix ./src/**/*.ts",
-    "lint-js": "eslint --fix ./*.js",
-    "doc": "typedoc"
+    "lint-js": "eslint --fix ./*.js"
   },
   "types": "types/p5starter.d.ts"
 }
