@@ -7,10 +7,10 @@ A small utility library for creating p5.js sketches with scaling feature.
 - Also enables to insert initialization code (via `p5s.init`) so you don't have to write everything in `setup()`.
 - Works on [p5.js instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode). TypeScript/ES6 friendly.
 
+GitHub: <https://github.com/fal-works/p5-scaler>
 
-## Usage
 
-### With `<script>` tag
+## Use with `<script>` tag
 
 After loading `p5.js`, load `p5-scaler.js` (or `*.min.js` for reducing size) via `<script>` tag.
 
@@ -25,7 +25,8 @@ The order is important as `p5-scaler.js` will refer to the global variable `p5`.
 
 **For a tutorial sample code, see: <https://editor.p5js.org/FAL/sketches/uKrr1SGZF>**
 
-### On TypeScript / ES6
+
+## Use on TypeScript / ES6
 
 Install via NPM:
 
