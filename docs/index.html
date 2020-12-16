@@ -44,31 +44,22 @@
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/p5methods.html" class="tsd-kind-icon">P5<wbr>Methods</a>
+			<a href="interfaces/scaledcanvassize.html" class="tsd-kind-icon">Scaled<wbr>Canvas<wbr>Size</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/scaledcanvas.html" class="tsd-kind-icon">Scaled<wbr>Canvas</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="modules.html#canvas" class="tsd-kind-icon">canvas</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="modules.html#init" class="tsd-kind-icon">init</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="modules.html#p" class="tsd-kind-icon">p</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="modules.html#rootelement" class="tsd-kind-icon">root<wbr>Element</a>
+			<a href="interfaces/scaler.html" class="tsd-kind-icon">Scaler</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="modules.html#drawoncanvas" class="tsd-kind-icon">draw<wbr>OnCanvas</a>
+			<a href="modules.html#createautocanvasresizer" class="tsd-kind-icon">create<wbr>Auto<wbr>Canvas<wbr>Resizer</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#fixedratio" class="tsd-kind-icon">fixed<wbr>Ratio</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#fixedsize" class="tsd-kind-icon">fixed<wbr>Size</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="modules.html#setparentelement" class="tsd-kind-icon">set<wbr>Parent<wbr>Element</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#variableratio" class="tsd-kind-icon">variable<wbr>Ratio</a>
@@ -81,24 +72,24 @@
 			<a href="#p5-scaler" id="p5-scaler" style="color: inherit; text-decoration: none;">
 				<h1>p5-scaler</h1>
 			</a>
-			<p>A small utility library for creating p5.js sketches with scaling feature.</p>
+			<p>A small library for scaling p5.js sketches.</p>
 			<ul>
 				<li>Resizes/scales the canvas depending on the size of the parent HTML element.  </li>
 				<li>The aspect ratio can be either fixed or variable.</li>
-				<li>Also enables to insert initialization code (via <code>p5s.init</code>) so you don&#39;t have to write everything in <code>setup()</code>.</li>
-				<li>Works on <a href="https://github.com/processing/p5.js/wiki/Global-and-instance-mode">p5.js instance mode</a>. TypeScript/ES6 friendly.</li>
+				<li>Works on both <a href="https://github.com/processing/p5.js/wiki/Global-and-instance-mode">global and instance mode</a> of p5.js.</li>
+				<li>TypeScript/ES6 friendly.</li>
 			</ul>
 			<p>GitHub: <a href="https://github.com/fal-works/p5-scaler">https://github.com/fal-works/p5-scaler</a></p>
 			<a href="#use-with-ltscriptgt-tag" id="use-with-ltscriptgt-tag" style="color: inherit; text-decoration: none;">
-				<h2>Use with <code>&lt;script&gt;</code> tag</h2>
+				<h2>Use with &lt;script&gt; tag</h2>
 			</a>
 			<p>After loading <code>p5.js</code>, load <code>p5-scaler.js</code> (or <code>*.min.js</code> for reducing size) via <code>&lt;script&gt;</code> tag.</p>
 			<p>The order is important as <code>p5-scaler.js</code> will refer to the global variable <code>p5</code>.</p>
 			<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
-<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@fal-works/p5-scaler@0.1.0/lib/p5-scaler.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@fal-works/p5-scaler@0.2.0/lib/p5-scaler.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
 </code></pre>
 			<p><code>p5-scaler.js</code> will define a global variable <code>p5s</code> so that you can use it in your sketch.</p>
-			<p><strong>For a tutorial sample code, see: <a href="https://editor.p5js.org/FAL/sketches/uKrr1SGZF">https://editor.p5js.org/FAL/sketches/uKrr1SGZF</a></strong></p>
+			<p><strong>For a tutorial sample code, see: <a href="https://editor.p5js.org/FAL/sketches/W08t3h2qR">https://editor.p5js.org/FAL/sketches/W08t3h2qR</a></strong></p>
 			<a href="#use-on-typescript--es6" id="use-on-typescript--es6" style="color: inherit; text-decoration: none;">
 				<h2>Use on TypeScript / ES6</h2>
 			</a>
@@ -107,9 +98,7 @@
 			<p>And then something like:</p>
 			<pre><code class="language-js"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">p5s</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;@fal-works/p5-scaler&quot;</span><span style="color: #000000">;</span>
 </code></pre>
-			<p>Unlike using <code>&lt;script&gt;</code> tag, you may also directly import some common instances like the below, however note that they are available only after the setup process has been started.</p>
-			<pre><code class="language-js"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">p</span><span style="color: #000000">, </span><span style="color: #001080">canvas</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;@fal-works/p5-scaler&quot;</span><span style="color: #000000">;</span>
-</code></pre>
+			<p>If on instance mode, be sure to associate the scaler object with <code>p5</code> instance by calling <code>setP5Instance()</code> method.</p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -117,33 +106,19 @@
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Namespaces</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-namespace"><a href="modules/config.html" class="tsd-kind-icon">config</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
 						<h3>Interfaces</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-interface"><a href="interfaces/p5methods.html" class="tsd-kind-icon">P5<wbr>Methods</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/scaledcanvas.html" class="tsd-kind-icon">Scaled<wbr>Canvas</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
-						<h3>Variables</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-variable"><a href="modules.html#canvas" class="tsd-kind-icon">canvas</a></li>
-							<li class="tsd-kind-variable"><a href="modules.html#init" class="tsd-kind-icon">init</a></li>
-							<li class="tsd-kind-variable"><a href="modules.html#p" class="tsd-kind-icon">p</a></li>
-							<li class="tsd-kind-variable"><a href="modules.html#rootelement" class="tsd-kind-icon">root<wbr>Element</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/scaledcanvassize.html" class="tsd-kind-icon">Scaled<wbr>Canvas<wbr>Size</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/scaler.html" class="tsd-kind-icon">Scaler</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-function"><a href="modules.html#drawoncanvas" class="tsd-kind-icon">draw<wbr>OnCanvas</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#createautocanvasresizer" class="tsd-kind-icon">create<wbr>Auto<wbr>Canvas<wbr>Resizer</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#fixedratio" class="tsd-kind-icon">fixed<wbr>Ratio</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#fixedsize" class="tsd-kind-icon">fixed<wbr>Size</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#setparentelement" class="tsd-kind-icon">set<wbr>Parent<wbr>Element</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#variableratio" class="tsd-kind-icon">variable<wbr>Ratio</a></li>
 						</ul>
 					</section>
@@ -151,107 +126,33 @@
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Variables</h2>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="canvas" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagLet">Let</span> canvas</h3>
-				<div class="tsd-signature tsd-kind-icon">canvas<span class="tsd-signature-symbol">:</span> <a href="interfaces/scaledcanvas.html" class="tsd-signature-type">ScaledCanvas</a></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/84e61f0/src/shared.ts#L10">shared.ts:10</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p><code>ScaledCanvas</code> instance shared within the entire sketch.</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="init" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagLet">Let</span> init</h3>
-				<div class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Initializer</span><span class="tsd-signature-symbol"> = {onCompleteAssignP5: [],onStartSetup: [],}</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/84e61f0/src/sketch.ts#L14">sketch.ts:14</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Set of functions automatically called in the initialization process.</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="p" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagLet">Let</span> p</h3>
-				<div class="tsd-signature tsd-kind-icon">p<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">p5</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/84e61f0/src/shared.ts#L5">shared.ts:5</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p><code>p5</code> instance shared within the entire sketch.</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="rootelement" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagLet">Let</span> root<wbr>Element</h3>
-				<div class="tsd-signature tsd-kind-icon">root<wbr>Element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> = document.body</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/84e61f0/src/shared.ts#L16">shared.ts:16</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>The HTML element that contains the canvas (default: <code>document.body</code>).</p>
-					</div>
-				</div>
-			</section>
-		</section>
-		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
 			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="drawoncanvas" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> draw<wbr>OnCanvas</h3>
+				<a name="createautocanvasresizer" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> create<wbr>Auto<wbr>Canvas<wbr>Resizer</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">draw<wbr>OnCanvas<span class="tsd-signature-symbol">(</span>drawCallback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">create<wbr>Auto<wbr>Canvas<wbr>Resizer<span class="tsd-signature-symbol">(</span>scaler<span class="tsd-signature-symbol">: </span><a href="interfaces/scaler.html" class="tsd-signature-type">Scaler</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AutoCanvasResizerFunction</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/84e61f0/src/draw.ts#L4">draw.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/4417e64/src/utility/resize.ts#L20">utility/resize.ts:20</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Runs <code>drawCallback</code> scaled with the current canvas scale factor.</p>
+								<p>Creates a function that checks the change in required canvas size
+								and resizes the actual canvas if needed.</p>
 							</div>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>drawCallback: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
-								<ul class="tsd-parameters">
-									<li class="tsd-parameter-signature">
-										<ul class="tsd-signatures tsd-kind-type-literal">
-											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-										</ul>
-										<ul class="tsd-descriptions">
-											<li class="tsd-description">
-												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-											</li>
-										</ul>
-									</li>
-								</ul>
+								<h5>scaler: <a href="interfaces/scaler.html" class="tsd-signature-type">Scaler</a></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AutoCanvasResizerFunction</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -259,43 +160,42 @@
 				<a name="fixedratio" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> fixed<wbr>Ratio</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">fixed<wbr>Ratio<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Starter</span></li>
+					<li class="tsd-signature tsd-kind-icon">fixed<wbr>Ratio<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>parent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/scaler.html" class="tsd-signature-type">Scaler</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/84e61f0/src/entry.ts#L28">entry.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/4417e64/src/scaler.ts#L32">scaler.ts:32</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Entry point of <code>p5-scaler</code>.
-								The canvas size will fit the root element keeping the aspect ratio.</p>
+								<p>Creates a <code>Scaler</code> instance.
+								The canvas size will fit the parent element keeping the aspect ratio.</p>
 							</div>
-							<p>Call the returned <code>start()</code> function for starting the sketch.</p>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>params: <span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+								<h5>params: <span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>parent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
 										<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> parent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 										<div class="tsd-comment tsd-typography">
-											<p>The logical height of the canvas.</p>
+											<p>Either a DOM element or its ID.</p>
 										</div>
 									</li>
 									<li class="tsd-parameter">
 										<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-										<div class="tsd-comment tsd-typography">
-											<p>The logical width of the canvas.</p>
-										</div>
 									</li>
 								</ul>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Starter</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="interfaces/scaler.html" class="tsd-signature-type">Scaler</a></h4>
 					</li>
 				</ul>
 			</section>
@@ -303,19 +203,19 @@
 				<a name="fixedsize" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> fixed<wbr>Size</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">fixed<wbr>Size<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Starter</span></li>
+					<li class="tsd-signature tsd-kind-icon">fixed<wbr>Size<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/scaler.html" class="tsd-signature-type">Scaler</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/84e61f0/src/entry.ts#L60">entry.ts:60</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/4417e64/src/scaler.ts#L82">scaler.ts:82</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Entry point of <code>p5-scaler</code> with a fixed size without scaling.
-								Call the returned <code>start()</code> function for starting the sketch.</p>
+								<p>Creates a <code>Scaler</code> instance with a fixed size without scaling.
+								This is just for compatibility with other scaling modes of <code>p5-scaler</code>.</p>
 							</div>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -332,7 +232,41 @@
 								</ul>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Starter</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="interfaces/scaler.html" class="tsd-signature-type">Scaler</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="setparentelement" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Parent<wbr>Element</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">set<wbr>Parent<wbr>Element<span class="tsd-signature-symbol">(</span>canvas<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">p5.Renderer</span>, parentElementOrId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/4417e64/src/utility/parent.ts#L15">utility/parent.ts:15</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Appends the DOM element of <code>canvas</code> under <code>parent</code>. Useful in global mode.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>canvas: <span class="tsd-signature-type">p5.Renderer</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The instance returned from <code>createCanvas()</code>.</p>
+								</div>
+							</li>
+							<li>
+								<h5>parentElementOrId: <span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -340,37 +274,39 @@
 				<a name="variableratio" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> variable<wbr>Ratio</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">variable<wbr>Ratio<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>displayBlock<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Starter</span></li>
+					<li class="tsd-signature tsd-kind-icon">variable<wbr>Ratio<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>parent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/scaler.html" class="tsd-signature-type">Scaler</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/84e61f0/src/entry.ts#L45">entry.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/fal-works/p5-scaler/blob/4417e64/src/scaler.ts#L58">scaler.ts:58</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Entry point of <code>p5-scaler</code> with a variable aspect ratio.
-								The canvas size will fit the root element in both width and height.</p>
+								<p>Creates a <code>Scaler</code> instance with a variable aspect ratio.
+								The canvas size will fit the parent element in both width and height.</p>
 							</div>
-							<p>Call the returned <code>start()</code> function for starting the sketch.</p>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>params: <span class="tsd-signature-symbol">{ </span>displayBlock<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+								<h5>params: <span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>parent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
-										<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> display<wbr>Block<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+										<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 									</li>
 									<li class="tsd-parameter">
-										<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> parent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+										<div class="tsd-comment tsd-typography">
+											<p>Either a DOM element or its ID.</p>
+										</div>
 									</li>
 								</ul>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Starter</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="interfaces/scaler.html" class="tsd-signature-type">Scaler</a></h4>
 					</li>
 				</ul>
 			</section>
