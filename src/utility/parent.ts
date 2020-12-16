@@ -1,6 +1,7 @@
 import p5 from "p5";
 import { RectangleSize } from "../types";
 
+/** Receives DOM element or its ID and returns the found element. */
 const tryFindElement = (
   elm: HTMLElement | string | undefined
 ): HTMLElement | undefined | null =>
