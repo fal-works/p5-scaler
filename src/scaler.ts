@@ -27,15 +27,16 @@ const createScaler = (calcRequiredSize: () => ScaledCanvasSize): Scaler => {
 /**
  * Creates a `Scaler` instance.
  * The canvas size will fit the parent element keeping the aspect ratio.
+ * @param params.parent Either a DOM element or its ID.
  */
 export const fixedRatio = (params: {
   readonly width: number;
   readonly height: number;
-  readonly parentElementOrId?: HTMLElement | string;
+  readonly parent?: HTMLElement | string;
 }): Scaler => {
-  const { width, height, parentElementOrId } = params;
+  const { width, height, parent } = params;
   const logical: RectangleSize = { width, height };
-  const getParentSize = createGetParentSize(parentElementOrId);
+  const getParentSize = createGetParentSize(parent);
 
   const calcSize = () => {
     const scaleFactor = calcFittingScaleFactor(logical, getParentSize());
@@ -52,13 +53,14 @@ export const fixedRatio = (params: {
 /**
  * Creates a `Scaler` instance with a variable aspect ratio.
  * The canvas size will fit the parent element in both width and height.
+ * @param params.parent Either a DOM element or its ID.
  */
 export const variableRatio = (params: {
   readonly height: number;
-  readonly parentElementOrId?: HTMLElement | string;
+  readonly parent?: HTMLElement | string;
 }): Scaler => {
-  const { height, parentElementOrId } = params;
-  const getParentSize = createGetParentSize(parentElementOrId);
+  const { height, parent } = params;
+  const getParentSize = createGetParentSize(parent);
 
   const calcSize = () => {
     const physical = getParentSize();
