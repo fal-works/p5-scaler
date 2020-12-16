@@ -1,8 +1,3 @@
-export * from "./entry";
-
-export { P5Methods } from "./p5-methods";
-export { ScaledCanvas } from "./canvas";
-export { init } from "./sketch";
-export { p, canvas, rootElement } from "./shared";
-export { drawOnCanvas } from "./draw";
-export * as config from "./config";
+export { ScaledCanvasSize, Scaler } from "./types";
+export { fixedRatio, variableRatio, fixedSize } from "./scaler";
+export { createAutoCanvasResizer, setParentElement } from "./utility";

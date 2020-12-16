@@ -53,7 +53,6 @@
       "rules": {
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-empty-function": "off"
       }
     },
@@ -62,7 +61,13 @@
         "sample/**/*.js"
       ],
       "globals": {
-        "p5s": "readonly"
+        "p5s": "readonly",
+        "fill": "readonly",
+        "background": "readonly",
+        "circle": "readonly"
+      },
+      "rules": {
+        "no-unused-vars": "off"
       }
     }
   ]

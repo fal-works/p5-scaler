@@ -1,7 +1,7 @@
 {
   "name": "@fal-works/p5-scaler",
-  "description": "A small utility library for creating p5.js sketches with scaling feature.",
-  "version": "0.1.0",
+  "description": "A small library for scaling p5.js sketches.",
+  "version": "0.2.0-alpha",
   "author": "FAL",
   "bugs": {
     "url": "https://github.com/fal-works/p5-scaler/issues"
@@ -63,5 +63,5 @@
     "lint": "eslint --fix ./src/**/*.ts",
     "lint-js": "eslint --fix ./*.js"
   },
-  "types": "types/p5-scaler.d.ts"
+  "types": "types/index.d.ts"
 }
