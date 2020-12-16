@@ -18,7 +18,7 @@ The order is important as `p5-scaler.js` will refer to the global variable `p5`.
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-<script src="https://unpkg.com/@fal-works/p5-scaler@0.1.0/lib/p5-scaler.js"></script>
+<script src="https://unpkg.com/@fal-works/p5-scaler@0.2.0/lib/p5-scaler.js"></script>
 ```
 
 `p5-scaler.js` will define a global variable `p5s` so that you can use it in your sketch.
@@ -40,4 +40,4 @@ And then something like:
 import * as p5s from "@fal-works/p5-scaler";
 ```
 
-If you're on instance mode, be sure to associate the scaler object with the `p5` instance by calling the method `setP5Instance()`.
+If on instance mode, be sure to associate the scaler object with `p5` instance by calling `setP5Instance()` method.
