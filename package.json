@@ -41,7 +41,7 @@
   ],
   "homepage": "https://github.com/fal-works/p5-scaler#readme",
   "jsnext:main": "lib/p5-scaler.mjs",
-  "keywords": [],
+  "keywords": ["p5", "p5js"],
   "license": "MIT",
   "main": "lib/p5-scaler.js",
   "module": "lib/p5-scaler.mjs",
