@@ -10,13 +10,13 @@
     "p5": "^1.2.0"
   },
   "devDependencies": {
-    "@fal-works/mere-file-transformer": "^0.1.0",
+    "@fal-works/mere-file-transformer": "^0.1.1",
     "@fal-works/s-l-t-r": "^0.2.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@types/p5": "^0.9.1",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
-    "esbuild": "^0.8.24",
+    "esbuild": "^0.8.26",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
