@@ -14,38 +14,34 @@
     "ecmaVersion": 2015,
     "sourceType": "module"
   },
+  "rules": {
+    "lines-around-comment": "error"
+  },
   "overrides": [
     {
       "files": [
         "lib/*.js"
       ],
-      "env": {
-        "node": true,
-        "amd": true
-      },
-      "globals": {
-        "globalThis": "readonly"
-      },
       "parserOptions": {
         "sourceType": "script"
       },
       "rules": {
-        "no-prototype-builtins": "off"
+        "no-unused-vars": "off"
       }
     },
     {
       "files": [
-        "src/**/*.ts"
+        "**/*.ts"
       ],
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
         "prettier/@typescript-eslint"
       ],
       "globals": {},
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
-        "project": "./tsconfig.json"
       },
       "plugins": [
         "@typescript-eslint"
@@ -68,6 +64,19 @@
       },
       "rules": {
         "no-unused-vars": "off"
+      }
+    },
+    {
+      "files": [
+        "scripts/**/*.js",
+        "./config.js"
+      ],
+      "env": {
+        "es6": true,
+        "node": true
+      },
+      "parserOptions": {
+        "ecmaVersion": 2020
       }
     }
   ]
