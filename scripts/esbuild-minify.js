@@ -1,3 +1,4 @@
+if (!require.resolve("esbuild")) throw "esbuild not installed.";
 const esbuildApi = require("esbuild");
 
 const { getPaths } = require("./lib-type");

@@ -7,9 +7,11 @@ const { dir } = require("../config");
 const { LibType, getPaths } = require("./lib-type");
 const { preFormatFiles } = require("./pre-formatter");
 const { rollup } = require("./rollup");
-// const { terser } = require("./terser");
-const { esbuildMinify } = require("./esbuild-minify");
 
+// const { terser } = require("./terser");
+// const minify = terser;
+
+const { esbuildMinify } = require("./esbuild-minify");
 const minify = esbuildMinify;
 
 // ---- Config ------------------------------------------------------------
