@@ -41,8 +41,7 @@
       ],
       "globals": {},
       "parser": "@typescript-eslint/parser",
-      "parserOptions": {
-      },
+      "parserOptions": {},
       "plugins": [
         "@typescript-eslint"
       ],
@@ -68,8 +67,7 @@
     },
     {
       "files": [
-        "scripts/**/*.js",
-        "./config.js"
+        "./build.js"
       ],
       "env": {
         "es6": true,

@@ -10,12 +10,13 @@
     "p5": "^1.2.0"
   },
   "devDependencies": {
+    "@fal-works/bundle-helper": "^0.1.0",
     "@fal-works/mere-file-transformer": "^0.1.1",
-    "@fal-works/s-l-t-r": "^0.2.0",
+    "@fal-works/s-l-t-r": "^0.3.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@types/p5": "^0.9.1",
-    "@typescript-eslint/eslint-plugin": "^4.10.0",
-    "@typescript-eslint/parser": "^4.10.0",
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
@@ -54,9 +55,8 @@
     "url": "git+https://github.com/fal-works/p5-scaler.git"
   },
   "scripts": {
-    "script": "node ./scripts/index.js",
-    "build": "yarn script build",
-    "docs": "yarn script docs",
+    "build": "node build.js",
+    "docs": "node build.js docs",
     "lint": "eslint --fix ./src/**/*.ts"
   },
   "types": "types/index.d.ts"
