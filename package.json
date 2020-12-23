@@ -10,9 +10,9 @@
     "p5": "^1.2.0"
   },
   "devDependencies": {
-    "@fal-works/bundle-helper": "^0.1.0",
+    "@fal-works/bundle-helper": "^0.2.3",
     "@fal-works/mere-file-transformer": "^0.1.1",
-    "@fal-works/s-l-t-r": "^0.3.0",
+    "@fal-works/s-l-t-r": "^0.4.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@types/p5": "^0.9.1",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
@@ -22,11 +22,10 @@
     "eslint-plugin-prettier": "^3.3.0",
     "prettier": "^2.2.1",
     "replacestream": "^4.0.3",
-    "rimraf": "^3.0.2",
     "rollup": "^2.35.1",
     "rollup-plugin-cleanup": "^3.2.1",
     "terser": "^5.5.1",
-    "typedoc": "^0.20.0-beta.27",
+    "typedoc": "^0.19.2",
     "typescript": "^4.1.3"
   },
   "directories": {
@@ -34,7 +33,10 @@
   },
   "eslintIgnore": [
     "*.min.js",
-    "*.min.mjs"
+    "*.min.mjs",
+    "/out/",
+    "/lib/",
+    "/types/"
   ],
   "files": [
     "lib",
@@ -49,13 +51,13 @@
   "license": "MIT",
   "main": "lib/p5-scaler.js",
   "module": "lib/p5-scaler.mjs",
-  "optionalDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fal-works/p5-scaler.git"
   },
   "scripts": {
-    "build": "node build.js",
+    "dev": "node build.js dev",
+    "build": "node build.js build",
     "docs": "node build.js docs",
     "lint": "eslint --fix ./src/**/*.ts"
   },
