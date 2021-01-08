@@ -12,9 +12,7 @@
     "noEmitOnError": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
     "newLine": "LF"
   },
   "include": ["./src/**/*.ts"]
