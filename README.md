@@ -17,8 +17,8 @@ After loading `p5.js`, load `p5-scaler.js` (or `*.min.js` for reducing size) via
 The order is important as `p5-scaler.js` will refer to the global variable `p5`.
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-<script src="https://unpkg.com/@fal-works/p5-scaler@0.2.0/lib/p5-scaler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fal-works/p5-scaler@0.2.0/lib/p5-scaler.js"></script>
 ```
 
 `p5-scaler.js` will define a global variable `p5s` so that you can use it in your sketch.
