@@ -2,6 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./types",
+    "declarationMap": true,
     "outDir": "./out",
     "moduleResolution": "node",
     "target": "es2015",
