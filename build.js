@@ -10,7 +10,7 @@ const moduleName = "p5-scaler";
 
 const bannerContent = `
 ${moduleName}
-A small module for scaling p5.js sketches.
+A small library for scaling p5.js sketches.
 @see https://fal-works.github.io/${moduleName}
 @copyright ${year} FAL
 @license MIT
