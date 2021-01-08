@@ -13,14 +13,10 @@
     {
       "files": ["**/*.ts"],
       "extends": [
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended",
         "prettier/@typescript-eslint"
       ],
-      "globals": {},
       "parser": "@typescript-eslint/parser",
-      "parserOptions": {},
       "plugins": ["@typescript-eslint"],
       "rules": {
         "@typescript-eslint/no-parameter-properties": "off",
