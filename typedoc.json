@@ -1,0 +1,7 @@
+{
+  "out": "docs",
+  "entryPoints": ["./src/index.ts"],
+  "theme": "minimal",
+  "readme": "README.md",
+  "includeVersion": true
+}

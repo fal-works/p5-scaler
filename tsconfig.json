@@ -1,33 +1,20 @@
 {
-    "compilerOptions": {
-        "declaration": true,
-        "declarationDir": "./types",
-        "outDir": "./out",
-        "moduleResolution": "node",
-        "target": "es2015",
-        "module": "es2015",
-        "sourceMap": false,
-        "preserveConstEnums": false,
-        "noEmitOnError": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true,
-        "newLine": "LF"
-    },
-    "include": [
-        "./src/**/*.ts"
-    ],
-    "typedocOptions": {
-        "out": "docs",
-        "entryPoints": [
-            "./src/index.ts"
-        ],
-        "excludeExternals": true,
-        "excludeNotExported": true,
-        "excludePrivate": true,
-        "theme": "minimal",
-        "readme": "README.md",
-    }
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./types",
+    "outDir": "./out",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "module": "es2015",
+    "sourceMap": false,
+    "preserveConstEnums": false,
+    "noEmitOnError": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "newLine": "LF"
+  },
+  "include": ["./src/**/*.ts"]
 }
