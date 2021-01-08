@@ -27,7 +27,7 @@
     "p5": "^1.2.0"
   },
   "devDependencies": {
-    "@fal-works/bundle-helper": "^0.3.1",
+    "@fal-works/bundle-helper": "^0.3.2",
     "@fal-works/mere-file-transformer": "^0.1.1",
     "@fal-works/s-l-t-r": "^0.5.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
