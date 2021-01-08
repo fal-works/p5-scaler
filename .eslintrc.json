@@ -3,36 +3,15 @@
     "browser": true,
     "es6": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended"
-  ],
-  "ignorePatterns": [
-    "out/**/*.js"
-  ],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "ignorePatterns": ["*.min.js", "/out/", "/lib/", "/types/"],
   "parserOptions": {
     "ecmaVersion": 2015,
     "sourceType": "module"
   },
-  "rules": {
-    "lines-around-comment": "error"
-  },
   "overrides": [
     {
-      "files": [
-        "lib/*.js"
-      ],
-      "parserOptions": {
-        "sourceType": "script"
-      },
-      "rules": {
-        "no-unused-vars": "off"
-      }
-    },
-    {
-      "files": [
-        "**/*.ts"
-      ],
+      "files": ["**/*.ts"],
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -42,9 +21,7 @@
       "globals": {},
       "parser": "@typescript-eslint/parser",
       "parserOptions": {},
-      "plugins": [
-        "@typescript-eslint"
-      ],
+      "plugins": ["@typescript-eslint"],
       "rules": {
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/no-explicit-any": "off",
@@ -52,9 +29,7 @@
       }
     },
     {
-      "files": [
-        "sample/**/*.js"
-      ],
+      "files": ["sample/**/*.js"],
       "globals": {
         "p5s": "readonly",
         "fill": "readonly",
@@ -66,15 +41,14 @@
       }
     },
     {
-      "files": [
-        "./build.js"
-      ],
+      "files": ["./build.js"],
       "env": {
         "es6": true,
-        "node": true
+        "node": true,
+        "browser": false
       },
       "parserOptions": {
-        "ecmaVersion": 2020
+        "ecmaVersion": 2019
       }
     }
   ]

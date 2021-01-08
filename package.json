@@ -45,12 +45,6 @@
     "typedoc": "0.20.0-beta.27",
     "typescript": "^4.1.3"
   },
-  "eslintIgnore": [
-    "*.min.js",
-    "/out/",
-    "/lib/",
-    "/types/"
-  ],
   "scripts": {
     "dev": "node build.js dev",
     "build": "node build.js build",
