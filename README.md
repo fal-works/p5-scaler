@@ -18,7 +18,7 @@ The order is important as `p5-scaler.js` will refer to the global variable `p5`.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fal-works/p5-scaler@0.2.0/lib/p5-scaler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fal-works/p5-scaler@0.2.1/lib/p5-scaler.js"></script>
 ```
 
 `p5-scaler.js` will define a global variable `p5s` so that you can use it in your sketch.
