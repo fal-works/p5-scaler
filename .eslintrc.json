@@ -12,12 +12,21 @@
   "overrides": [
     {
       "files": ["**/*.ts"],
-      "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "prettier"
+      ],
       "parser": "@typescript-eslint/parser",
+      "parserOptions": { "project": "tsconfig.json" },
       "plugins": ["@typescript-eslint"],
       "rules": {
+        "no-fallthrough": "off", // already checked by TypeScript
+        "@typescript-eslint/no-explicit-any": [
+          "warn",
+          { "fixToUnknown": true }
+        ],
         "@typescript-eslint/no-parameter-properties": "off",
-        "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-empty-function": "off"
       }
     },
@@ -41,7 +50,7 @@
         "browser": false
       },
       "parserOptions": {
-        "ecmaVersion": 2019
+        "ecmaVersion": 2020
       }
     }
   ]

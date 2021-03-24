@@ -31,7 +31,7 @@ export interface Scaler {
   readonly resizeCanvas: (noRedraw?: boolean) => void;
 
   /** Calls `drawCallback` scaled with the current scale factor. */
-  readonly drawOnCanvas: (drawCallback: (p?: p5) => any) => void;
+  readonly drawOnCanvas: (drawCallback: (p?: p5) => void) => void;
 
   /** Returns the last calculated required size. */
   readonly getSize: () => ScaledCanvasSize;
