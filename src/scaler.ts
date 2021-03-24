@@ -5,7 +5,7 @@ import { RectangleSize, ScaledCanvasSize, Scaler } from "./types";
 /** Creates a `Scaler` instance with any scaling mode. */
 const createScaler = (calcRequiredSize: () => ScaledCanvasSize): Scaler => {
   let size = calcRequiredSize();
-  let p: p5 = window as any;
+  let p: p5 = (window as unknown) as p5;
 
   return {
     createCanvas: (renderer = "p2d") =>
@@ -86,7 +86,7 @@ export const fixedSize = (params: {
   const { width, height } = params;
   const logical = { width, height };
   const size = { logical, physical: logical, scaleFactor: 1.0 };
-  let p: p5 = window as any;
+  let p: p5 = (window as unknown) as p5;
   return {
     createCanvas: (renderer = "p2d") => p.createCanvas(width, height, renderer),
     resizeCanvas: () => {},
