@@ -12,7 +12,7 @@ const tryFindElement = (
  * @param canvas The instance returned from `createCanvas()`.
  * @param parent Either a DOM element or its ID.
  */
-export const setParentElement = (
+const setP5CanvasParentElement = (
   canvas: p5.Renderer,
   parentElementOrId: HTMLElement | string
 ): void => {
@@ -20,12 +20,17 @@ export const setParentElement = (
   if (parentElement) parentElement.appendChild(canvas.elt);
 };
 
-/** Creates a function that returns the size of the parent area. */
-export const createGetParentSize = (
-  parentElementOrId?: HTMLElement | string
+/** Creates a function that returns the size of `element`. */
+const createElementSizeGetter = (
+  elementOrId?: HTMLElement | string
 ): (() => RectangleSize) => {
-  const element = tryFindElement(parentElementOrId);
+  const element = tryFindElement(elementOrId);
   return !element || element === document.body
     ? () => ({ width: window.innerWidth, height: window.innerHeight })
     : () => element.getBoundingClientRect();
+};
+
+export {
+  setP5CanvasParentElement as setParentElement,
+  createElementSizeGetter,
 };

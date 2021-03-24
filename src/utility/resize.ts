@@ -17,9 +17,7 @@ const equalScaledCanvasSize = (
  * Creates a function that checks the change in required canvas size
  * and resizes the actual canvas if needed.
  */
-export const createAutoCanvasResizer = (
-  scaler: Scaler
-): AutoCanvasResizerFunction => {
+const createAutoCanvasResizer = (scaler: Scaler): AutoCanvasResizerFunction => {
   let lastSize = scaler.getSize();
   const { updateRequiredSize } = scaler;
 
@@ -35,3 +33,5 @@ export const createAutoCanvasResizer = (
     lastSize = newSize;
   };
 };
+
+export { createAutoCanvasResizer };

@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { calcFittingScaleFactor, createGetParentSize } from "./utility";
+import { calcFittingScaleFactor, createElementSizeGetter } from "./utility";
 import { RectangleSize, ScaledCanvasSize, Scaler } from "./types";
 
 /** Creates a `Scaler` instance with any scaling mode. */
@@ -29,14 +29,14 @@ const createScaler = (calcRequiredSize: () => ScaledCanvasSize): Scaler => {
  * The canvas size will fit the parent element keeping the aspect ratio.
  * @param params.parent Either a DOM element or its ID.
  */
-export const fixedRatio = (params: {
+const createScalerFixedRatio = (params: {
   readonly width: number;
   readonly height: number;
   readonly parent?: HTMLElement | string;
 }): Scaler => {
   const { width, height, parent } = params;
   const logical: RectangleSize = { width, height };
-  const getParentSize = createGetParentSize(parent);
+  const getParentSize = createElementSizeGetter(parent);
 
   const calcSize = () => {
     const scaleFactor = calcFittingScaleFactor(logical, getParentSize());
@@ -55,12 +55,12 @@ export const fixedRatio = (params: {
  * The canvas size will fit the parent element in both width and height.
  * @param params.parent Either a DOM element or its ID.
  */
-export const variableRatio = (params: {
+const createScalerVariableRatio = (params: {
   readonly height: number;
   readonly parent?: HTMLElement | string;
 }): Scaler => {
   const { height, parent } = params;
-  const getParentSize = createGetParentSize(parent);
+  const getParentSize = createElementSizeGetter(parent);
 
   const calcSize = () => {
     const physical = getParentSize();
@@ -79,7 +79,7 @@ export const variableRatio = (params: {
  * Creates a `Scaler` instance with a fixed size without scaling.
  * This is just for compatibility with other scaling modes of `p5-scaler`.
  */
-export const fixedSize = (params: {
+const createScalerFixedSize = (params: {
   readonly width: number;
   readonly height: number;
 }): Scaler => {
@@ -95,4 +95,10 @@ export const fixedSize = (params: {
     updateRequiredSize: () => size,
     setP5Instance: (p5Instance): p5 => (p = p5Instance),
   };
+};
+
+export {
+  createScalerFixedRatio as fixedRatio,
+  createScalerVariableRatio as variableRatio,
+  createScalerFixedSize as fixedSize,
 };

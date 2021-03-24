@@ -4,7 +4,7 @@ import { RectangleSize } from "../types";
  * Calculates the scale factor for fitting `nonScaledSize` to `targetSize`
  * keeping the original aspect ratio.
  */
-export const calcFittingScaleFactor = (
+const calcFittingScaleFactor = (
   nonScaledSize: RectangleSize,
   targetSize: RectangleSize
 ): number =>
@@ -12,3 +12,5 @@ export const calcFittingScaleFactor = (
     targetSize.width / nonScaledSize.width,
     targetSize.height / nonScaledSize.height
   );
+
+export { calcFittingScaleFactor };
