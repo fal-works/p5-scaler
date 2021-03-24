@@ -1,6 +1,5 @@
-node_modules
-pnpm-lock.yaml
-/lib
-/types
-/out
+node_modules/
+/lib/
+/types/
+/out/
 /docs/assets/js/
