@@ -14,8 +14,7 @@
   },
   "files": [
     "lib",
-    "types",
-    "src"
+    "types"
   ],
   "main": "lib/p5-scaler.js",
   "module": "lib/p5-scaler.mjs",
