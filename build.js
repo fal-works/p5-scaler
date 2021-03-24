@@ -3,7 +3,7 @@ const builder = require("@fal-works/bundle-helper/lib/build/browser-module");
 
 // ----------------------------------------------------------------------------
 
-const version = "0.2.1";
+const version = "0.2.2";
 const year = "2020-2021";
 
 const moduleName = "p5-scaler";

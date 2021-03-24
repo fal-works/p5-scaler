@@ -2,7 +2,7 @@
 
 A small library for scaling p5.js sketches.
 
-- Resizes/scales the canvas depending on the size of the parent HTML element.  
+- Resizes/scales the canvas depending on the size of the parent HTML element.
 - The aspect ratio can be either fixed or variable.
 - Works on both [global and instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode) of p5.js.
 - TypeScript/ES6 friendly.
@@ -17,8 +17,8 @@ After loading `p5.js`, load `p5-scaler.js` (or `*.min.js` for reducing size) via
 The order is important as `p5-scaler.js` will refer to the global variable `p5`.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fal-works/p5-scaler@0.2.1/lib/p5-scaler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.3.0/lib/p5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fal-works/p5-scaler@0.2.2/lib/p5-scaler.js"></script>
 ```
 
 `p5-scaler.js` will define a global variable `p5s` so that you can use it in your sketch.
