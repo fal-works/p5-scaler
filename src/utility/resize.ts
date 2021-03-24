@@ -1,4 +1,8 @@
-import { AutoCanvasResizerFunction, ScaledCanvasSize, Scaler } from "../types";
+import type {
+  AutoCanvasResizerFunction,
+  ScaledCanvasSize,
+  Scaler,
+} from "../types";
 
 /** @returns `true` if `a` equals `b`. */
 const equalScaledCanvasSize = (

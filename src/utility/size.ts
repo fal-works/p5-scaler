@@ -1,4 +1,4 @@
-import { RectangleSize } from "../types";
+import type { RectangleSize } from "../types";
 
 /**
  * Calculates the scale factor for fitting `nonScaledSize` to `targetSize`

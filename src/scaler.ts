@@ -1,6 +1,7 @@
-import p5 from "p5";
+import type p5 from "p5";
+import type { RectangleSize, ScaledCanvasSize, Scaler } from "./types";
+
 import { calcFittingScaleFactor, createElementSizeGetter } from "./utility";
-import { RectangleSize, ScaledCanvasSize, Scaler } from "./types";
 
 /** Creates a `Scaler` instance with any scaling mode. */
 const createScaler = (calcRequiredSize: () => ScaledCanvasSize): Scaler => {

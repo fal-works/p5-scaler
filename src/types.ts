@@ -1,4 +1,5 @@
-import p5, { P2D, WEBGL } from "p5";
+import type p5 from "p5";
+import type { P2D, WEBGL } from "p5";
 
 /** The width and height. */
 export interface RectangleSize {

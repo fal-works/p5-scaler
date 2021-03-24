@@ -1,19 +1,31 @@
 {
+  "include": ["./src/**/*.ts"],
   "compilerOptions": {
+    /* Basic Options */
+    "outDir": "./out",
+    "target": "es2015",
+    "module": "es2015",
     "declaration": true,
     "declarationDir": "./types",
     "declarationMap": true,
-    "outDir": "./out",
-    "moduleResolution": "node",
-    "target": "es2015",
-    "module": "es2015",
-    "sourceMap": false,
-    "preserveConstEnums": false,
-    "noEmitOnError": true,
-    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+
+    /* Strict Type-Checking Options */
     "strict": true,
+
+    /* Additional Checks */
     "noImplicitReturns": true,
-    "newLine": "LF"
-  },
-  "include": ["./src/**/*.ts"]
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* Module Resolution Options */
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+
+    /* Advanced Options */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "noEmitOnError": true
+  }
 }

@@ -1,5 +1,5 @@
-import p5 from "p5";
-import { RectangleSize } from "../types";
+import type p5 from "p5";
+import type { RectangleSize } from "../types";
 
 /** Receives DOM element or its ID and returns the found element. */
 const tryFindElement = (
